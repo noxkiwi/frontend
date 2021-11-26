@@ -3,8 +3,18 @@ namespace noxkiwi\frontend\Traits;
 
 use noxkiwi\frontend\Constants\Render;
 use noxkiwi\frontend\Interfaces\RenderableInterface;
+use function count;
+use function explode;
+use function implode;
 use function in_array;
+use function is_array;
+use function is_object;
+use function is_string;
 use function method_exists;
+use function str_replace;
+use function strpos;
+use function strtolower;
+use function substr;
 
 /**
  * I am the Activitystream class. I work as a collection of entry constants and the static writeEntry method.

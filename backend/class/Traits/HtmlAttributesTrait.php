@@ -3,7 +3,10 @@ namespace noxkiwi\frontend\Traits;
 
 use JetBrains\PhpStorm\Pure;
 use noxkiwi\frontend\Constants\HtmlAttributes;
+use function explode;
+use function implode;
 use function is_string;
+use function str_contains;
 
 /**
  * I am the Activitystream class. I work as a collection of entry constants and the static writeEntry method.
