@@ -70,6 +70,16 @@ trait HtmlAttributesTrait
     }
 
     /**
+     * I will set the style attribute.
+     *
+     * @param string $style
+     */
+    final public function setStyle(string $style): void
+    {
+        $this->attributes[HtmlAttributes::STYLE] = $style;
+    }
+
+    /**
      * I will return the classes as string for HTML output.
      * @return string
      */
