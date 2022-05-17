@@ -23,9 +23,12 @@ final class Badge extends Div
         if (empty($classes)) {
             $classes = 'bg-secondary';
         }
-
         return <<<HTML
-<span class="badge badge-xs {$classes}" title="{$this->getAttribute(HtmlAttributes::TITLE)}">{$this->renderInner($data)}</span>
+<span 
+    class="badge badge-xs {$classes}"
+    title="{$this->getAttribute(HtmlAttributes::TITLE)}"
+    style="{$this->getAttribute(HtmlAttributes::STYLE)}"
+    >{$this->renderInner($data)}</span>
 HTML;
     }
 }

@@ -31,7 +31,7 @@ trait RenderableTrait
     protected string $tagName;
     /** @var RenderableInterface[] $elements */
     private array $elements = [];
-    /** @var array $attributes */
+    /** @var array $attributes I am the collection of Attributes on this renderable element. */
     private array $attributes = [];
 
     /**
@@ -39,20 +39,21 @@ trait RenderableTrait
      */
     public function add(RenderableInterface|string $element, ?int $position = null): void
     {
-        if ($position !== null) {
-            $i      = 0;
-            $result = [];
-            foreach ($this->elements as $value) {
-                if ($i === $position) {
-                    $result[] = $element;
-                }
-                $result[] = $value;
-                $i++;
-            }
-            $this->elements = $result;
-        } else {
+        if ($position === null) {
             $this->elements[] = $element;
+
+            return;
         }
+        $index  = 0;
+        $result = [];
+        foreach ($this->elements as $value) {
+            if ($index === $position) {
+                $result[] = $element;
+            }
+            $result[] = $value;
+            $index++;
+        }
+        $this->elements = $result;
     }
 
     /**
